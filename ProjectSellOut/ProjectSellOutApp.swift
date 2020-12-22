@@ -11,24 +11,15 @@ import CoreData
 @main
 
 struct ProjectSellOutApp: App {
-    let persistence = PersistenceManager()
-    
+    let persistenceController = PersistenceController.shared
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
 
-class PersistenceManager {
-  let persistentContainer: NSPersistentContainer = {
-      let container = NSPersistentContainer(name: "ProjectSellOut")
-      container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-          if let error = error as NSError? {
-              fatalError("Unresolved error \(error), \(error.userInfo)")
-          }
-      })
-      return container
-  }()
+
     
-}

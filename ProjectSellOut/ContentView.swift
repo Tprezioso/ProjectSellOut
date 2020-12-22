@@ -17,7 +17,7 @@ struct TaskRow: View {
 
 struct ContentView: View {
     
-    @Environment(\.managedObjectContext) var context
+    @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
             entity: Task.entity(),
@@ -52,13 +52,13 @@ struct ContentView: View {
     }
     
     func addTask() {
-        let newTask = Task(context: context)
+        let newTask = Task(context: viewContext)
         newTask.id = UUID()
-        newTask.isCompleted = false
+        newTask.isComplete = false
         newTask.name = taskName
         newTask.dateAdded = Date()
         do {
-            try context.save()
+            try viewContext.save()
         } catch {
             print(error)
         }
@@ -71,7 +71,7 @@ struct ContentView: View {
            fetchRequest.predicate = NSPredicate(format: "id == %@", taskID as CVarArg)
            fetchRequest.fetchLimit = 1
            do {
-               let test = try context.fetch(fetchRequest)
+               let test = try viewContext.fetch(fetchRequest)
                let taskUpdate = test[0] as! NSManagedObject
                taskUpdate.setValue(isComplete, forKey: "isComplete")
            } catch {
