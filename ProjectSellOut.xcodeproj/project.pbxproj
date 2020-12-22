@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5507D319259164B000442FE7 /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507D318259164B000442FE7 /* TaskRowView.swift */; };
 		55090ECD258AD20800BC2812 /* ProjectSellOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55090ECB258AD20800BC2812 /* ProjectSellOut.xcdatamodeld */; };
-		551500D6258D8465007F9DB5 /* Task+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551500D5258D8465007F9DB5 /* Task+Extensions.swift */; };
 		55FE99992589A0FA00AD837D /* ProjectSellOutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE99982589A0FA00AD837D /* ProjectSellOutApp.swift */; };
 		55FE999B2589A0FA00AD837D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE999A2589A0FA00AD837D /* ContentView.swift */; };
 		55FE999D2589A0FA00AD837D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FE999C2589A0FA00AD837D /* Assets.xcassets */; };
@@ -16,8 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5507D318259164B000442FE7 /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 		55090ECC258AD20800BC2812 /* ProjectSellOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectSellOut.xcdatamodel; sourceTree = "<group>"; };
-		551500D5258D8465007F9DB5 /* Task+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Extensions.swift"; sourceTree = "<group>"; };
 		55FE99952589A0FA00AD837D /* ProjectSellOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectSellOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FE99982589A0FA00AD837D /* ProjectSellOutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSellOutApp.swift; sourceTree = "<group>"; };
 		55FE999A2589A0FA00AD837D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,10 +58,10 @@
 			children = (
 				55FE99982589A0FA00AD837D /* ProjectSellOutApp.swift */,
 				55FE999A2589A0FA00AD837D /* ContentView.swift */,
+				5507D318259164B000442FE7 /* TaskRowView.swift */,
 				55FE999C2589A0FA00AD837D /* Assets.xcassets */,
 				55FE99A12589A0FA00AD837D /* Info.plist */,
 				55090ECB258AD20800BC2812 /* ProjectSellOut.xcdatamodeld */,
-				551500D5258D8465007F9DB5 /* Task+Extensions.swift */,
 				55FE999E2589A0FA00AD837D /* Preview Content */,
 			);
 			path = ProjectSellOut;
@@ -144,9 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5507D319259164B000442FE7 /* TaskRowView.swift in Sources */,
 				55090ECD258AD20800BC2812 /* ProjectSellOut.xcdatamodeld in Sources */,
 				55FE999B2589A0FA00AD837D /* ContentView.swift in Sources */,
-				551500D6258D8465007F9DB5 /* Task+Extensions.swift in Sources */,
 				55FE99992589A0FA00AD837D /* ProjectSellOutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
