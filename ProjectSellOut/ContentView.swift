@@ -48,6 +48,11 @@ struct ContentView: View {
                                         }
                                     }
                 }
+                Button {
+                    
+                } label: {
+                    Text("Random Choice")
+                }
             }.navigationTitle("Make a Decesion")
         }
         
