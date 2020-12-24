@@ -28,25 +28,27 @@ struct ContentView: View {
     @State private var taskName: String = ""
 
     var body: some View {
-        VStack {
-            HStack{
-                TextField("Task Name", text: $taskName)
-                Button(action: {
-                    self.addTask()
-                }){
-                    Image(systemName: "plus.circle.fill")
+        NavigationView {
+            VStack {
+                HStack{
+                    TextField("Task Name", text: $taskName)
+                    Button(action: {
+                        self.addTask()
+                    }){
+                        Image(systemName: "plus.circle.fill")
+                    }
                 }
-            }
-            .padding()
-            List {
-                ForEach(notCompletedTasks, id: \.self) { task in
-                                    Button(action: {
-                                        self.updateTask(task)
-                                    }){
-                                        TaskRow(task: task)
+                .padding()
+                List {
+                    ForEach(notCompletedTasks, id: \.self) { task in
+                                        Button(action: {
+                                            self.updateTask(task)
+                                        }){
+                                            TaskRow(task: task)
+                                        }
                                     }
-                                }
-            }
+                }
+            }.navigationTitle("Make a Decesion")
         }
         
     }
