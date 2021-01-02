@@ -8,13 +8,6 @@
 import SwiftUI
 import CoreData
 
-struct TaskRow: View {
-    var task: Task
-    var body: some View {
-        Text(task.name ?? "No name given")
-    }
-}
-
 struct ContentView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -44,7 +37,7 @@ struct ContentView: View {
                                         Button(action: {
                                             self.updateTask(task)
                                         }){
-                                            TaskRow(task: task)
+                                            TaskRowView(task: task)
                                         }
                                     }
                 }
