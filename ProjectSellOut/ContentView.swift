@@ -9,38 +9,13 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(
-            entity: Task.entity(),
-            sortDescriptors: [NSSortDescriptor(keyPath: \Task.dateAdded, ascending: false)],
-            predicate: NSPredicate(format: "isComplete == %@", NSNumber(value: false))
-        ) var notCompletedTasks: FetchedResults<Task>
-
     @State private var taskName: String = ""
 
     var body: some View {
         NavigationView {
             VStack {
-                HStack{
-                    TextField("Task Name", text: $taskName)
-                    Button(action: {
-                        self.addTask()
-                    }){
-                        Image(systemName: "plus.circle.fill")
-                    }
-                }
-                .padding()
-                List {
-                    ForEach(notCompletedTasks, id: \.self) { task in
-                                        Button(action: {
-                                            self.updateTask(task)
-                                        }){
-                                            TaskRowView(task: task)
-                                        }
-                                    }
-                }
+                AddTaskTextView(taskName: taskName)
+                TaskView()
                 Button {
                     
                 } label: {
@@ -50,7 +25,32 @@ struct ContentView: View {
         }
         
     }
-    
+}
+
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+struct AddTaskTextView: View {
+    @State var taskName: String
+    @Environment(\.managedObjectContext) private var viewContext
+  
+    var body: some View {
+        HStack{
+            TextField("Task Name", text: $taskName)
+            Button(action: {
+                self.addTask()
+            }){
+                Image(systemName: "plus.circle.fill")
+            }
+        }
+        .padding()
+    }
+
     func addTask() {
         let newTask = Task(context: viewContext)
         newTask.id = UUID()
@@ -61,6 +61,28 @@ struct ContentView: View {
             try viewContext.save()
         } catch {
             print(error)
+        }
+    }
+}
+
+struct TaskView: View {
+    @FetchRequest(
+            entity: Task.entity(),
+            sortDescriptors: [NSSortDescriptor(keyPath: \Task.dateAdded, ascending: false)],
+            predicate: NSPredicate(format: "isComplete == %@", NSNumber(value: false))
+        ) var notCompletedTasks: FetchedResults<Task>
+
+    @Environment(\.managedObjectContext) private var viewContext
+
+    var body: some View {
+        List {
+            ForEach(notCompletedTasks, id: \.self) { task in
+                Button(action: {
+                    self.updateTask(task)
+                }){
+                    TaskRowView(task: task)
+                }
+            }
         }
     }
     
@@ -78,12 +100,4 @@ struct ContentView: View {
                print(error)
            }
        }
-}
-
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
 }
