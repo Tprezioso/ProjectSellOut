@@ -43,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		557E224125A2A5DF00E70A8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5586C96A25A265680078B41F /* TaskView.swift */,
+				5586C96725A265180078B41F /* AddTaskTextView.swift */,
+				5507D318259164B000442FE7 /* TaskRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		55FE998C2589A0FA00AD837D = {
 			isa = PBXGroup;
 			children = (
@@ -65,9 +75,7 @@
 				55FE99982589A0FA00AD837D /* ProjectSellOutApp.swift */,
 				557FD4622591713600CF604C /* Persistance.swift */,
 				55FE999A2589A0FA00AD837D /* ContentView.swift */,
-				5586C96A25A265680078B41F /* TaskView.swift */,
-				5586C96725A265180078B41F /* AddTaskTextView.swift */,
-				5507D318259164B000442FE7 /* TaskRowView.swift */,
+				557E224125A2A5DF00E70A8C /* Views */,
 				55FE999C2589A0FA00AD837D /* Assets.xcassets */,
 				55FE99A12589A0FA00AD837D /* Info.plist */,
 				55090ECB258AD20800BC2812 /* ProjectSellOut.xcdatamodeld */,
@@ -300,7 +308,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Swifttom.ProjectSellOut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Swifttom.ProjectSellOut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
