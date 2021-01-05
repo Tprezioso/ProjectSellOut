@@ -9,12 +9,13 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @State private var taskName: String = ""
 
+    var taskViewModel = TaskViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
-                AddTaskTextView(taskName: taskName)
+                AddTaskTextView(taskName: taskViewModel.taskName)
                 TaskView()
                 Button {
                     

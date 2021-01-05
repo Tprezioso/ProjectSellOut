@@ -16,6 +16,7 @@ struct AddTaskTextView: View {
             TextField("Task Name", text: $taskName)
             Button(action: {
                 self.addTask()
+                taskName = ""
             }){
                 Image(systemName: "plus.circle.fill")
             }
