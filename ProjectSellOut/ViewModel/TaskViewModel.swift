@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import CoreData
 
 class TaskViewModel: ObservableObject {
     @Published var taskName: String = ""
-
+    @Published var taskItemList = [""]
     
+
 }
+

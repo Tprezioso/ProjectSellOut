@@ -21,6 +21,7 @@ struct TaskView: View {
         List {
             ForEach(notCompletedTasks, id: \.self) { task in
                 Button(action: {
+                    
                     self.updateTask(task)
                 }){
                     TaskRowView(task: task)

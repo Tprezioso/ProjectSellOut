@@ -18,7 +18,6 @@ struct ContentView: View {
                 AddTaskTextView(taskName: taskViewModel.taskName)
                 TaskView()
                 Button {
-                    
                 } label: {
                     Text("Random Choice")
                 }
