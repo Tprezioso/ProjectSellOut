@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct TaskView: View {
+    
     @FetchRequest(
             entity: Task.entity(),
             sortDescriptors: [NSSortDescriptor(keyPath: \Task.dateAdded, ascending: false)],
@@ -20,10 +21,11 @@ struct TaskView: View {
     var body: some View {
         List {
             ForEach(notCompletedTasks, id: \.self) { task in
+
                 Button(action: {
-                    
                     self.updateTask(task)
                 }){
+                   
                     TaskRowView(task: task)
                 }
             }
