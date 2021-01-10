@@ -9,8 +9,22 @@ import SwiftUI
 import CoreData
 
 class TaskViewModel: ObservableObject {
+
     @Published var taskName: String = ""
-    
+
+    #warning("Need to fix bug where we continue to load old tasks that have been delete on screen but not from core data")
+    func loadTask(context: NSManagedObjectContext) -> [Task]? {
+        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        
+        do {
+            let array = try context.fetch(fetchRequest) as [Task]
+            return array
+        } catch let error {
+            print("error FetchRequest \(error)")
+        }
+        
+        return nil
+    }
 
 }
 

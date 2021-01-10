@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5507D319259164B000442FE7 /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507D318259164B000442FE7 /* TaskRowView.swift */; };
 		55090ECD258AD20800BC2812 /* ProjectSellOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55090ECB258AD20800BC2812 /* ProjectSellOut.xcdatamodeld */; };
+		551DFB4A25ABBD9D003FDCFF /* RandomDecesionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551DFB4925ABBD9D003FDCFF /* RandomDecesionButton.swift */; };
 		557FD4632591713600CF604C /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557FD4622591713600CF604C /* Persistance.swift */; };
 		5586C96825A265180078B41F /* AddTaskTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586C96725A265180078B41F /* AddTaskTextView.swift */; };
 		5586C96B25A265680078B41F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586C96A25A265680078B41F /* TaskView.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		5507D318259164B000442FE7 /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 		55090ECC258AD20800BC2812 /* ProjectSellOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectSellOut.xcdatamodel; sourceTree = "<group>"; };
+		551DFB4925ABBD9D003FDCFF /* RandomDecesionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDecesionButton.swift; sourceTree = "<group>"; };
 		557FD4622591713600CF604C /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		5586C96725A265180078B41F /* AddTaskTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskTextView.swift; sourceTree = "<group>"; };
 		5586C96A25A265680078B41F /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 				5586C96A25A265680078B41F /* TaskView.swift */,
 				5586C96725A265180078B41F /* AddTaskTextView.swift */,
 				5507D318259164B000442FE7 /* TaskRowView.swift */,
+				551DFB4925ABBD9D003FDCFF /* RandomDecesionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				5586C96B25A265680078B41F /* TaskView.swift in Sources */,
 				55090ECD258AD20800BC2812 /* ProjectSellOut.xcdatamodeld in Sources */,
 				5586C96825A265180078B41F /* AddTaskTextView.swift in Sources */,
+				551DFB4A25ABBD9D003FDCFF /* RandomDecesionButton.swift in Sources */,
 				55FE999B2589A0FA00AD837D /* ContentView.swift in Sources */,
 				55CCB79225A5307800B2BEA2 /* TaskViewModel.swift in Sources */,
 				557FD4632591713600CF604C /* Persistance.swift in Sources */,
