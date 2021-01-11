@@ -28,11 +28,11 @@ struct TaskView: View {
                    
                     TaskRowView(task: task)
                 }
-            }
+            }.onDelete(perform: removeTask)
         }
     }
     
-    func updateTask(_ task: Task){
+    func updateTask(_ task: Task) {
            let isComplete = true
            let taskID = task.id! as NSUUID
            let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Task")
@@ -46,6 +46,13 @@ struct TaskView: View {
                print(error)
            }
        }
+    
+    func removeTask(at offsets: IndexSet) {
+        for index in offsets {
+            let task = notCompletedTasks[index]
+            viewContext.delete(task)
+        }
+    }
 }
 
 

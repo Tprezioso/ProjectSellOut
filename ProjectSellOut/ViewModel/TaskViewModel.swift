@@ -12,7 +12,6 @@ class TaskViewModel: ObservableObject {
 
     @Published var taskName: String = ""
 
-    #warning("Need to fix bug where we continue to load old tasks that have been delete on screen but not from core data")
     func loadTask(context: NSManagedObjectContext) -> [Task]? {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         
