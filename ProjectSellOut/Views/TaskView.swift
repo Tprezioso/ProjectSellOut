@@ -17,40 +17,58 @@ struct TaskView: View {
         ) var notCompletedTasks: FetchedResults<Task>
 
     @Environment(\.managedObjectContext) private var viewContext
+    var taskViewModel = TaskViewModel()
+
 
     var body: some View {
-        List {
-            ForEach(notCompletedTasks, id: \.self) { task in
-
-                Button(action: {
-                    self.updateTask(task)
-                }){
-                   
+        NavigationView {
+            List {
+                AddTaskTextView(taskName: taskViewModel.taskName)
+                
+                ForEach(notCompletedTasks, id: \.self) { task in
                     TaskRowView(task: task)
-                }
-            }.onDelete(perform: removeTask)
+                        .buttonStyle(BorderlessButtonStyle())
+                    
+                    //                Button(action: {
+                    //                    self.updateTask(task)
+                    //                }){
+                    //
+                    //                }
+                }.onDelete(perform: removeTask)
+                .buttonStyle(BorderlessButtonStyle())
+            }
+            .navigationTitle("Make a Decison")
+
         }
+        RandomDecesionButton(isTapped: taskViewModel.isTapped)
+            .padding()
+        Spacer()
     }
     
-    func updateTask(_ task: Task) {
-           let isComplete = true
-           let taskID = task.id! as NSUUID
-           let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Task")
-           fetchRequest.predicate = NSPredicate(format: "id == %@", taskID as CVarArg)
-           fetchRequest.fetchLimit = 1
-           do {
-               let test = try viewContext.fetch(fetchRequest)
-               let taskUpdate = test[0] as! NSManagedObject
-               taskUpdate.setValue(isComplete, forKey: "isComplete")
-           } catch {
-               print(error)
-           }
-       }
+//    func updateTask(_ task: Task) {
+//           let isComplete = true
+//           let taskID = task.id! as NSUUID
+//           let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Task")
+//           fetchRequest.predicate = NSPredicate(format: "id == %@", taskID as CVarArg)
+//           fetchRequest.fetchLimit = 1
+//           do {
+//               let test = try viewContext.fetch(fetchRequest)
+//               let taskUpdate = test[0] as! NSManagedObject
+//               taskUpdate.setValue(isComplete, forKey: "isComplete")
+//           } catch {
+//               print(error)
+//           }
+//       }
     
     func removeTask(at offsets: IndexSet) {
         for index in offsets {
             let task = notCompletedTasks[index]
             viewContext.delete(task)
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            // handle the Core Data error
         }
     }
 }

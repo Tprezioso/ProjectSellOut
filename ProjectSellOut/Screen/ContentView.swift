@@ -10,17 +10,14 @@ import CoreData
 
 struct ContentView: View {
 
-    var taskViewModel = TaskViewModel()
     @State var isTapped = false
     
     var body: some View {
         NavigationView {
-            VStack {
-                AddTaskTextView(taskName: taskViewModel.taskName)
+            VStack() {
                 TaskView()
-                RandomDecesionButton(isTapped: isTapped)
+                    Spacer()
             }
-            .navigationTitle("Make a Decison")
         }
     }
     

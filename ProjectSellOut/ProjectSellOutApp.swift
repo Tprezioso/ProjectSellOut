@@ -15,7 +15,7 @@ struct ProjectSellOutApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TaskView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

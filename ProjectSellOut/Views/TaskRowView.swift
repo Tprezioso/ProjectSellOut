@@ -15,9 +15,3 @@ struct TaskRowView: View {
     }
 }
 
-//struct TaskRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        var task: Task
-//        TaskRowView(task: task)
-//    }
-//}

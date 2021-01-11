@@ -11,7 +11,7 @@ import CoreData
 class TaskViewModel: ObservableObject {
 
     @Published var taskName: String = ""
-
+    @Published var isTapped = false
     func loadTask(context: NSManagedObjectContext) -> [Task]? {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         
